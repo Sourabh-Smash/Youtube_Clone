@@ -9,6 +9,14 @@ const SideBar = () => {
         <li className="font-semibold pt-4 cursor-pointer">Subscriptions</li>
       </ul>
       <div className="mt-5 ">
+        <h2 className="font-bold text-xl pl-3 cursor-pointer">You</h2>
+        <ul className="pl-5">
+          <li className="font-semibold pt-2 cursor-pointer">History</li>
+          <li className="font-semibold pt-4 cursor-pointer">Liked </li>
+          <li className="font-semibold pt-4 cursor-pointer">Saved </li>
+        </ul>
+      </div>
+      <div className="mt-5 ">
         <h2 className="font-bold text-xl pl-3 cursor-pointer">Explore</h2>
         <ul className="pl-5">
           <li className="font-semibold pt-2 cursor-pointer">Trending</li>
