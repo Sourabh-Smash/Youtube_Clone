@@ -1,41 +1,32 @@
-import React from 'react'
-
+import React from "react";
+import { FaBars } from "react-icons/fa6";
+import { ImYoutube2 } from "react-icons/im";
+import { IoSearchSharp } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
 const Head = () => {
   return (
     <div className="grid grid-flow-col  p-5 shadow-lg">
       <div className="flex col-span-1">
-        <img
-          className="h-8"
-          src="https://th.bing.com/th/id/OIP.uT9aOM2WpCqotn_AaZAEHgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain"
-          alt="menu"
-        />
-        <img
-          className="h-10 object-cover w-52 "
-          src="https://th.bing.com/th/id/OIP.8Ip-fZmPKYEruRSaDpvy0QHaEK?rs=1&pid=ImgDetMain"
-          alt="YouTube"
-        />
+        <FaBars className="text-white h-8 w-5" />
+        <ImYoutube2 className="text-white h-8 w-28" />
       </div>
-      <div className="col-span-10 text-center">
+      <div className="col-span-10 text-center flex justify-center">
         <input
           type="text"
           name=""
           id=""
-          className="w-1/2 border-2 p-1 border-red-500 rounded-l-xl focus:outline-none focus:bg-red-50  pl-3"
+          className="w-1/2 border p-1 border-gray-400 rounded-l-xl bg-black   focus:outline-none focus:border-blue-600  pl-3"
           placeholder="Enter To Search "
         />
-        <button className="p-1.5 rounded-r-xl bg-red-400 rounded- text-white font-bold hover:bg-red-500  ">
-          Search
+        <button className="p-1.5 border border-gray-400  px-4 rounded-r-xl bg-gray-600 text-white font-bold ">
+          <IoSearchSharp />
         </button>
       </div>
       <div className="col-span-1">
-        <img
-          className="h-8 "
-          src="https://th.bing.com/th/id/R.8e2c571ff125b3531705198a15d3103c?rik=gzhbzBpXBa%2bxMA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fuser-png-icon-big-image-png-2240.png&ehk=VeWsrun%2fvDy5QDv2Z6Xm8XnIMXyeaz2fhR3AgxlvxAc%3d&risl=&pid=ImgRaw&r=0"
-          alt="User"
-        />
+        <FaUserCircle className="text-white h-8 w-8" />
       </div>
     </div>
   );
-}
+};
 
 export default Head;
