@@ -10,18 +10,20 @@ import { GiShoppingBag } from "react-icons/gi";
 import { GiMusicalNotes } from "react-icons/gi";
 import { SiYoutubegaming } from "react-icons/si";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-
   if (!isMenuOpen) return null;
   return (
-    <div className="shadow-lg w-40 border-white border ">
+    <div className="shadow-lg w-40 ">
       <ul className="pl-5">
-        <li className="font-semibold pt-4 cursor-pointer flex items-center">
-          <IoMdHome className="h-5 w-5 mr-2" /> Home
-        </li>
+        <Link to={"/"}>
+          <li className="font-semibold pt-4 cursor-pointer flex items-center">
+            <IoMdHome className="h-5 w-5 mr-2" /> Home
+          </li>
+        </Link>
         <li className="font-semibold pt-4 cursor-pointer flex items-center">
           <SiYoutubeshorts className="h-5 w-5 mr-2" /> Shorts
         </li>
@@ -36,6 +38,7 @@ const SideBar = () => {
           <li className="font-semibold pt-2 cursor-pointer flex items-center">
             <FaHistory className="h-5 w-5 mr-2" /> History
           </li>
+
           <li className="font-semibold pt-4 cursor-pointer flex items-center">
             <AiOutlineLike className="h-5 w-5 mr-2" /> Liked Videos{" "}
           </li>
