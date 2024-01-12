@@ -3,11 +3,17 @@ import { FaBars } from "react-icons/fa6";
 import { ImYoutube2 } from "react-icons/im";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/homeVideoSlice";
 const Head = () => {
+  const dispach = useDispatch();
+  const toggleHandler = () => {
+    dispach(toggleMenu());
+  }
   return (
     <div className="grid grid-flow-col  p-5 shadow-lg">
       <div className="flex col-span-1">
-        <FaBars className="text-white h-8 w-5" />
+        <FaBars onClick={toggleHandler} className="text-white h-8 w-5" />
         <ImYoutube2 className="text-white h-8 w-28" />
       </div>
       <div className="col-span-10 text-center flex justify-center">

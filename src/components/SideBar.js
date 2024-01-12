@@ -9,8 +9,13 @@ import { IoMdTrendingUp } from "react-icons/io";
 import { GiShoppingBag } from "react-icons/gi";
 import { GiMusicalNotes } from "react-icons/gi";
 import { SiYoutubegaming } from "react-icons/si";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+
+
+  if (!isMenuOpen) return null;
   return (
     <div className="shadow-lg w-40 border-white border ">
       <ul className="pl-5">

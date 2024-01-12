@@ -1,12 +1,16 @@
-import './App.css';
-import Body from './components/Body';
-import Head from './components/Head';
+import "./App.css";
+import Body from "./components/Body";
+import Head from "./components/Head";
+import store from "./utils/store";
+import { Provider } from "react-redux";
 function App() {
   return (
-    <div className="bg-black text-white w-full h-full">
-      <Head />
-      <Body/>
-    </div>
+    <Provider store={store}>
+      <div className="bg-black text-white w-full h-full">
+        <Head />
+        <Body />
+      </div>
+    </Provider>
   );
 }
 
