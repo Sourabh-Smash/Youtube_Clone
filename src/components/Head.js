@@ -36,7 +36,7 @@ const Head = () => {
           </button>
         </div>
         {showSuggestions && (
-          <div className="ml-56 w-[35vw] fixed  bg-black rounded-lg shadow-md shadow-slate-700">
+          <div className="ml-56 w-[35vw] fixed bg-black rounded-lg shadow-md shadow-slate-700">
             <ul className="pt-2">
               {suggestions.map((item, id) => (
                 <li
