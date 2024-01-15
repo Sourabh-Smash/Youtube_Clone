@@ -3,9 +3,19 @@ import "./App.css";
 import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./utils/store";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import SearchListVidoeContainer from "./components/SearchListVidoeContainer";
+
+const ToggleContainer = () => {
+  const toggleValue = useSelector((store) => store.selectContainer.toggle);
+  return (
+    <div className="">
+      {toggleValue ? <MainContainer /> : <SearchListVidoeContainer />}
+    </div>
+  );
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -14,7 +24,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <MainContainer />,
+        element: <ToggleContainer />,
       },
       {
         path: "watch",
@@ -28,7 +38,7 @@ function App() {
     <Provider store={store}>
       <div className="bg-black text-white w-full h-full">
         <Head />
-        <RouterProvider router={appRouter}/>
+        <RouterProvider router={appRouter} />
       </div>
     </Provider>
   );
