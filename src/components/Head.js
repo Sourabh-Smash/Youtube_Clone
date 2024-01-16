@@ -71,6 +71,7 @@ const Head = () => {
                   onClick={() => {
                     dispach(clickOption(item));
                     dispach(toggleContainer());
+                    setSearchQuery(item);
                   }}
                   className="cursor-pointer flex items-center shadow-sm pl-3 py-2 shadow-slate-700  hover:bg-gray-700"
                 >
