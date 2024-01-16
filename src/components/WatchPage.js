@@ -11,7 +11,7 @@ const WatchPage = () => {
   const dispach = useDispatch();
   useEffect(() => {
     dispach(removeMenu());
-  }, [dispach]);
+  }, []);
   return (
     <>
       <div className="flex w-full">
