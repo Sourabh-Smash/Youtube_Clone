@@ -16,7 +16,7 @@ const useLiveChat = () => {
       );
     }, 2000);
     return () => clearInterval(timer);
-  }, []);
+  }, [dispach]);
   return chatMessages;
 };
 

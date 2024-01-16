@@ -73,7 +73,7 @@ const commentsObj = [
 ];
 
 const CommentBox = ({ data }) => {
-  const { name, text, replies } = data;
+  const { name, text } = data;
   return (
     <div className="flex items-center m-2 bg-gray-600 px-4 py-2 rounded-lg shadow-md shadow-gray-400 mb-3 ">
       <FaUserCircle className="text-white h-9 w-8" />

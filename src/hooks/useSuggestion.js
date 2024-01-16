@@ -10,10 +10,8 @@ const useSuggestion = (searchQuery) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (searchCache[searchQuery]) {
-        // call redcucer cache
         setApiData(searchCache[searchQuery]);
       } else {
-        // call api
         getSuggestions();
       }
     }, 200);
@@ -21,7 +19,7 @@ const useSuggestion = (searchQuery) => {
       clearTimeout(timer);
     };
   }, [searchQuery]);
-  const getSuggestions = async () => {
+  async function getSuggestions() {
     // console.log("Api - " + searchQuery);
     const data = await fetch(YOUTUBE_SUGGESTIONS + searchQuery);
     const json = await data.json();
@@ -33,7 +31,7 @@ const useSuggestion = (searchQuery) => {
         [searchQuery]: json[1],
       })
     );
-  };
+  }
   return apiData;
 };
 
