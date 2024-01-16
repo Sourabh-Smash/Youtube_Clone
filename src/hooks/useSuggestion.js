@@ -22,7 +22,7 @@ const useSuggestion = (searchQuery) => {
     };
   }, [searchQuery]);
   const getSuggestions = async () => {
-    console.log("Api - " + searchQuery);
+    // console.log("Api - " + searchQuery);
     const data = await fetch(YOUTUBE_SUGGESTIONS + searchQuery);
     const json = await data.json();
     // console.log(json[1]);

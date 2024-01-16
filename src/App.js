@@ -10,6 +10,7 @@ import SearchListVidoeContainer from "./components/SearchListVidoeContainer";
 
 const ToggleContainer = () => {
   const toggleValue = useSelector((store) => store.selectContainer.toggle);
+  // console.log(toggleValue);
   return (
     <div className="">
       {toggleValue ? <MainContainer /> : <SearchListVidoeContainer />}

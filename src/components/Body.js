@@ -1,14 +1,16 @@
 import React from "react";
 import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
-import SearchListVidoeContainer from "./SearchListVidoeContainer";
+import { useSelector } from "react-redux";
 
 const Body = () => {
+  const bgChanger = useSelector((store) => store.transparentBg.bg);
   return (
-    <div className="flex  ">
-      <SideBar />
-      {/* <SearchListVidoeContainer/> */}
-      <Outlet />
+    <div className={`flex ${bgChanger ? null : null}`}>
+      <div className="flex">
+        <SideBar />
+        <Outlet />
+      </div>
     </div>
   );
 };

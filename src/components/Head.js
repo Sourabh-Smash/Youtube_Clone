@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { ImYoutube2 } from "react-icons/im";
 import { IoSearchSharp } from "react-icons/io5";
@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/homeVideoSlice";
 import useSuggestion from "../hooks/useSuggestion";
 import { clickOption } from "../utils/recomendSearchSlice";
-import SearchListVidoeContainer from "./SearchListVidoeContainer";
 import { toggleContainer } from "../utils/selectContainerSlice";
+import { changeBg } from "../utils/transparentBgSlice";
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestions, setShowSuggestons] = useState(false);
@@ -44,14 +44,21 @@ const Head = () => {
         <div className=" text-center flex justify-center">
           <input
             type="text"
-            onFocus={() => setShowSuggestons(true)}
+            onFocus={() => {
+              setShowSuggestons(true);
+              dispach(changeBg());
+            }}
+            onBlur={() => dispach(changeBg())}
             value={searchQuery}
             ref={suggestionRef}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-1/2 border p-1 border-gray-400 rounded-l-xl bg-black focus:outline-none focus:border-blue-600  pl-3"
+            className="w-1/2 border p-1 border-gray-400 rounded-l-xl bg-black focus:outline-none focus:border-blue-600  pl-3 "
             placeholder="Enter To Search "
           />
-          <button className="p-1.5 border border-gray-400  px-4 rounded-r-xl bg-gray-600 text-white font-bold ">
+          <button
+            onClick={() => dispach(clickOption(suggestionRef.current.value))}
+            className="p-1.5 border border-gray-400  px-4 rounded-r-xl bg-gray-600 text-white font-bold "
+          >
             <IoSearchSharp />
           </button>
         </div>
@@ -63,7 +70,6 @@ const Head = () => {
                   key={id}
                   onClick={() => {
                     dispach(clickOption(item));
-                    console.log("first");
                     dispach(toggleContainer());
                   }}
                   className="cursor-pointer flex items-center shadow-sm pl-3 py-2 shadow-slate-700  hover:bg-gray-700"

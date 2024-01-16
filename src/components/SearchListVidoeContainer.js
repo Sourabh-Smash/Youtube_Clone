@@ -5,11 +5,9 @@ import useShowSearchYtVideos from "../hooks/useShowSearchYtVideos";
 import SearchResultVideoBox from "./SearchResultVideoBox";
 
 const SearchListVidoeContainer = () => {
-  const searchedVideos = useSelector(
-    (store) => store.recomendSearch.clickOption
-  );
+  const searchedVideos = useSelector((store) => store.recomendSearch.item);
   const searchedVideosList = useShowSearchYtVideos(searchedVideos);
-  console.log(searchedVideosList);
+  // console.log(searchedVideosList);
   return (
     <div className="flex flex-wrap">
       {searchedVideosList.map((item, id) => (

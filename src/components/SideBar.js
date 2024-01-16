@@ -17,7 +17,7 @@ const SideBar = () => {
 
   if (!isMenuOpen) return null;
   return (
-    <div className="shadow-lg w-40 ">
+    <div className="shadow-lg w-40 absolute bg-black rounded-sm">
       <ul className="pl-5">
         <Link to={"/"}>
           <li className="font-semibold pt-4 cursor-pointer flex items-center">

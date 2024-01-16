@@ -21,7 +21,7 @@ const LiveCommentSection = () => {
   const dispach = useDispatch();
   const chatMessages = useLiveChat();
   return (
-    <div className="w-full mr-3">
+    <div className="w-[500px] mr-3">
       <div className="w-full h-[415px] bg-gray-600 p-3 mr-3 rounded-lg overflow-y-scroll ">
         <div className=" font-semibold text-xl">Live Comments</div>
         <div className="flex flex-col-reverse ">

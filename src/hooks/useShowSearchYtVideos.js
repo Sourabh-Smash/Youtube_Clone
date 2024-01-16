@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { API_KEY } from "../Constant";
 
-const useShowSearchYtVideos = (searchItem = "iphone") => {
+const useShowSearchYtVideos = (searchItem) => {
   const [searchData, setSearchData] = useState([]);
   useEffect(() => {
     getsearchVideos();
